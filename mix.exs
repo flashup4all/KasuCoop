@@ -46,7 +46,11 @@ defmodule Coop.MixProject do
       {:absinthe, "~> 1.4"},
       {:absinthe_plug, "~> 1.4"},
       {:absinthe_ecto, "~> 0.1.3"},
-      {:credo, "~> 1.4"}
+      {:absinthe_error_payload, "~> 1.0"},
+      {:credo, "~> 1.4"},
+      {:guardian, "~> 1.0"},
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 1.0"}
     ]
   end
 

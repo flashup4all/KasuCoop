@@ -8,10 +8,10 @@ defmodule CoopWeb.Router do
   scope "/api" do
     pipe_through :api
 
-    forward("graphql", Absinthe.Plug, schema: CoopWeb.Schema)
+    forward("/graphql", Absinthe.Plug, schema: CoopWeb.Schema)
 
     if Mix.env() == :dev do
-    forward("/graphiql", Absinthe.Plug.GraphiQL, schema: CoopWeb.Schema)
+      forward("/graphiql", Absinthe.Plug.GraphiQL, schema: CoopWeb.Schema.Schema)
     end
   end
 
