@@ -11,7 +11,7 @@ defmodule CoopWeb.Router do
     forward("graphql", Absinthe.Plug, schema: CoopWeb.Schema)
 
     if Mix.env() == :dev do
-    forward("graphiql", Absinthe.Plug.GraphiQL, schema: CoopWeb.Schema)
+    forward("/graphiql", Absinthe.Plug.GraphiQL, schema: CoopWeb.Schema)
     end
   end
 
