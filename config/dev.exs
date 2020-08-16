@@ -2,10 +2,10 @@ use Mix.Config
 
 # Configure your database
 config :coop, Coop.Repo,
-  username: "postgres",
-  password: "root",
-  database: "coop_dev",
-  hostname: "localhost",
+  username: System.get_env("USERNAME"),
+  password: System.get_env("DATABASE_PASSWORD"),
+  database: System.get_env("DATABASE"),
+  hostname: System.get_env("HOST"),
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
@@ -55,3 +55,7 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+# local mail adapter
+config :coop, Coop.Mailer,
+  adapter: Bamboo.LocalAdapter

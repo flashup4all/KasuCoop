@@ -28,9 +28,18 @@ config :phoenix, :json_library, Jason
 
 # guardian config
 config :coop, Coop.Guardian,
-       issuer: "coop",
-       secret_key: "${GUARDIAN_SECRET}" #"d40Am5K/zwqndik24ly8JQ2a4iWcRyAZIALJ65uwRAzlL7Kxux6dVMxAlTjrr7jJ"
-      #  System.get_env("GUARDIAN_SECRET") # 
+  issuer: "coop",
+  secret_key: "${GUARDIAN_SECRET}"
+
+# bamboo mailgun adapter
+config :coop, Coop.Mailer,
+  adapter: Bamboo.MailgunAdapter,
+  api_key: System.get_env("MAILGUN_API_KEY"),
+  domain: {:system, "MAILGUN_DOMAIN"},
+  hackney_opts: [
+    recv_timeout: :timer.minutes(1)
+  ]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

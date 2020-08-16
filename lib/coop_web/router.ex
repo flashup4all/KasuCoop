@@ -6,6 +6,11 @@ defmodule CoopWeb.Router do
     plug CoopWeb.Plugs.Context
   end
 
+  # if Mix.env == :dev do
+  #   # If using Phoenix
+  #   forward "/sent_emails", Bamboo.SentEmailViewerPlug
+  # end
+
   scope "/api" do
     pipe_through :api
 

@@ -7,7 +7,7 @@ defmodule Coop.Account.User do
     field :email, :string
     field :password_hash, :string
     field :role, :string
-    #virtual fields
+    # virtual fields
     field :password, :string, virtual: true
 
     timestamps()
