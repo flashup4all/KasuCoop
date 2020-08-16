@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-# KCoop Portal
 Investment management Portal
 
 
