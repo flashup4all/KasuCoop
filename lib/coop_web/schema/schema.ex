@@ -3,7 +3,7 @@ defmodule CoopWeb.Schema.Schema do
 
   # alias CoopWeb.Types
   alias Coop.Account
-
+alias CoopWeb.Schema.Middleware
   @moduledoc """
   Coop Graphql schema
   """
@@ -13,6 +13,7 @@ defmodule CoopWeb.Schema.Schema do
   query do
     @desc "get list of users"
     field :users, list_of(:user_type) do
+        middleware(Middleware.Authorize, :any)
       resolve(&Account.UserResolver.list_users/3)
     end
   end
