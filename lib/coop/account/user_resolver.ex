@@ -1,7 +1,10 @@
 defmodule Coop.Account.UserResolver do
   alias Coop.Account
 
-  def list_users(_, _, _) do
+  def list_users(_, _, %{context: context}) do
+    IO.puts "ok"
+    IO.inspect context
+    IO.puts "end"
     {:ok, Account.list_users()}
   end
 

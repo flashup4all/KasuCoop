@@ -3,6 +3,7 @@ defmodule CoopWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug CoopWeb.Plugs.Context
   end
 
   scope "/api" do
