@@ -5,8 +5,8 @@ defmodule Coop.Account.UserResolver do
     {:ok, Account.list_users()}
   end
 
-  def create_user(_, %{input: input}, _) do
-    case Account.create_user(input) do
+  def create_user(_, %{user: user}, _) do
+    case Account.create_user(user) do
         {:ok, _} = successful -> successful
         {:error, changeset} ->
             {

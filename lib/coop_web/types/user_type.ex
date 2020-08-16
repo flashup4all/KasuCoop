@@ -15,4 +15,6 @@ defmodule CoopWeb.Types.UserType do
     field :password, non_null(:string)
     field :role, non_null(:string)
   end
+
+  
 end
