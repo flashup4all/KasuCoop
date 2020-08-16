@@ -20,7 +20,7 @@ defmodule Coop.MixProject do
   def application do
     [
       mod: {Coop.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :bamboo]
     ]
   end
 
@@ -50,7 +50,8 @@ defmodule Coop.MixProject do
       {:credo, "~> 1.4"},
       {:guardian, "~> 1.0"},
       {:comeonin, "~> 4.0"},
-      {:bcrypt_elixir, "~> 1.0"}
+      {:bcrypt_elixir, "~> 1.0"},
+      {:bamboo, "~> 1.5"}
     ]
   end
 

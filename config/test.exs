@@ -20,3 +20,6 @@ config :coop, CoopWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# test mail adapter
+config :coop, Coop.Mailer, adapter: Bamboo.TestAdapter
